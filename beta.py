@@ -36,7 +36,7 @@ def measure_voltages(dmm, measurement_frequency, duration):
         duration (int or float): The duration of the measurement in seconds.
     
     Returns:
-        list of dict: A list of timestamped voltage readings {'timestamp': timestamp, 'voltage': voltage}.
+        list of tuple: A list of timestamped voltage readings (timestamp, voltage).
     """
     expected_interval = 1 / measurement_frequency
     end_time = time.perf_counter() + duration
@@ -47,7 +47,7 @@ def measure_voltages(dmm, measurement_frequency, duration):
         try:
             voltage = dmm.volt()
             timestamp = time.time()
-            readings.append({'timestamp': timestamp, 'voltage': voltage})
+            readings.append((timestamp, voltage))
         except Exception as e:
             print(f"Error during measurement: {e}")
 
@@ -59,11 +59,12 @@ def measure_voltages(dmm, measurement_frequency, duration):
     return readings
 
 if __name__ == "__main__":
+    # Example usage within the module for testing purposes
     visa_addr = "USB0::0x0957::0x1A07::MY53206340::INSTR"
     try:
         dmm = setup_instrument(visa_addr)
 
-        measurement_frequency = 25  # Hz
+        measurement_frequency = 10  # Hz
         duration = 1  # second
 
         readings = measure_voltages(dmm, measurement_frequency, duration)
