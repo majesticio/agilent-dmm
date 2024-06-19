@@ -1,0 +1,55 @@
+import time
+import qcodes as qc
+from qcodes.instrument_drivers.Keysight import Keysight34461A
+
+visa_addr = "USB0::0x0957::0x1A07::MY53206340::INSTR"
+dmm = Keysight34461A('dmm', visa_addr)
+
+
+# Configure the range and resolution if needed
+dmm.range.set(10)  # 10 volts range
+dmm.resolution.set(0.0001)  # 100 µV resolution
+
+# Set the integration time to a minimum (e.g., 0.02 PLC for faster measurements)
+dmm.NPLC.set(0.02)  # Minimum integration time within allowed range
+
+# Disable autozero for faster measurements
+dmm.autozero.set('OFF')
+
+# Variable for measurement frequency (Hertz)
+measurement_frequency = 50  # Hz
+expected_interval = 1 / measurement_frequency
+
+# Start measurements
+num_measurements = 100
+voltages = []
+start_time = time.time()
+
+dmm.display.text('Measuring...')
+
+for _ in range(num_measurements):
+    iteration_start_time = time.time()
+    try:
+        voltage = dmm.volt.get()
+        voltages.append(voltage)
+    except Exception as e:
+        print(f"Error during measurement: {e}")
+    iteration_end_time = time.time()
+    iteration_time = iteration_end_time - iteration_start_time
+    print(f"Iteration time: {iteration_time:.6f} seconds")
+
+end_time = time.time()
+elapsed_time = end_time - start_time
+
+# Calculate actual Hertz
+actual_hertz = num_measurements / elapsed_time
+
+# Output results
+print(f"Total time for {num_measurements} measurements: {elapsed_time:.4f} seconds")
+print(f"Expected Hertz: {measurement_frequency} Hz")
+print(f"Actual Hertz: {actual_hertz:.2f} Hz")
+print(f"Average time per measurement: {elapsed_time / num_measurements:.4f} seconds")
+
+
+# Close the connection to the instrument
+dmm.close()
