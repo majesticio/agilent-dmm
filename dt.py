@@ -1,52 +1,44 @@
 import time
+import sched
 import qcodes as qc
 from qcodes.instrument_drivers.Keysight import Keysight34461A
 
+# Initialize the instrument
 visa_addr = "USB0::0x0957::0x1A07::MY53206340::INSTR"
 dmm = Keysight34461A('dmm', visa_addr)
-dmm.autorange_once()
-dmm.trigger.source('IMM')
-# dmm.trigger.count(1)
-dmm.trigger.delay(0.0)
-
 dmm.display.enabled(False)
 
-# Configure the range and resolution if needed
-dmm.range.set(10)  # 10 volts range
+# Configure measurement settings if needed
+# dmm.range.set(10)  # 10 volts range
 # dmm.resolution.set(0.0001)  # 100 µV resolution
-
-# Set the integration time to a minimum (e.g., 0.02 PLC for faster measurements)
 # dmm.NPLC.set(0.02)  # Minimum integration time within allowed range
+# dmm.autozero.set('OFF')
 
-# Disable autozero for faster measurements
-dmm.autozero.set('OFF')
-
-# Variable for measurement frequency (Hertz)
+# Measurement frequency and interval
 measurement_frequency = 20  # Hz
 expected_interval = 1 / measurement_frequency
 
+# Initialize scheduler
+scheduler = sched.scheduler(time.time, time.sleep)
+
 # Start measurements
-num_measurements = 100
+num_measurements = 300
 voltages = []
 start_time = time.time()
 
-
-# dmm.display.text('Measuring...')
-
-for _ in range(num_measurements):
-    iteration_start_time = time.time()
+def take_measurement(sc, counter):
     try:
-        voltage = dmm.volt()
+        voltage = dmm.volt.get()
         voltages.append(voltage)
     except Exception as e:
-        print(f"Error during measurement: {e}")
+        pass  # Handle error if necessary
 
-    iteration_end_time = time.time()
-    iteration_time = iteration_end_time - iteration_start_time
-    sleep_time = max(0, expected_interval - iteration_time)
-    time.sleep(sleep_time)
-    
-    # print(f"Iteration time: {iteration_time:.6f} seconds, Sleep time: {sleep_time:.6f} seconds")
+    if counter < num_measurements:
+        sc.enter(expected_interval, 1, take_measurement, (sc, counter + 1))
+
+# Schedule the first measurement
+scheduler.enter(0, 1, take_measurement, (scheduler, 1))
+scheduler.run()
 
 end_time = time.time()
 elapsed_time = end_time - start_time
@@ -62,4 +54,3 @@ print(f"Average time per measurement: {elapsed_time / num_measurements:.4f} seco
 
 # Close the connection to the instrument
 dmm.close()
-
