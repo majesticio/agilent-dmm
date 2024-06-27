@@ -21,6 +21,8 @@ def setup_instrument(visa_addr):
         dmm.range.set(10)  # 10 volts range
         dmm.NPLC.set(0.02)  # Minimum integration time for faster measurements
         dmm.autozero.set('OFF')
+        dmm.resolution.set(0.0001)
+
         return dmm
     except Exception as e:
         print(f"Error initializing the instrument: {e}")
