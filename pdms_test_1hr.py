@@ -4,21 +4,25 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from collections import deque
 from datetime import datetime
+import signal
 
 # Import setup_instrument from your module
 from beta import setup_instrument
 
-# test_time = 3600 # 1 hr test
-test_time = 60     # 1 min test run
+# Duration of the test
+test_time = 3600  # 1 hour
+# test_time = 7200  # 2 hour
+
+print(f"running test for {test_time} seconds...")
+# test_time = 60  # 1 minute for testing
 
 # Measurement frequency in Hertz
-measurement_frequency = 10  # Hz, change this to your desired frequency
+measurement_frequency = 10  # Hz
+sleep_interval = 1 / measurement_frequency  # Calculate the sleep interval
 
-# Initialize the instrument as 'dmm'
+# Initialize the instrument
 visa_addr = "USB0::0x0957::0x1A07::MY53206340::INSTR"
 dmm = setup_instrument(visa_addr)
-
-sleep_interval = 1 / measurement_frequency  # Calculate the sleep interval
 
 # Initialize plot
 plt.ion()  # Turn on interactive mode
@@ -37,15 +41,32 @@ voltages = deque(maxlen=max_points)
 
 # Prepare for data storage
 data = {'timestamp': [], 'voltage': []}
-
 start_time = time.time()
 start_datetime = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-
 csv_filename = f"PDMS_Test_{start_datetime}.csv"
+
+def save_data():
+    """Function to save data to CSV."""
+    df = pd.DataFrame(data)
+    df.to_csv(csv_filename, index=False)
+    print(f"Data saved to {csv_filename}")
+
+def handle_exit(signum, frame):
+    """Handle exit signal to save data and close connection."""
+    save_data()
+    if 'dmm' in locals():
+        dmm.close()
+        print("Connection to DMM closed.")
+    print("Process interrupted, exiting gracefully.")
+    exit(0)
+
+# Register signal handler for graceful exit
+signal.signal(signal.SIGINT, handle_exit)
+signal.signal(signal.SIGTERM, handle_exit)
 
 try:
     # Main loop for continuous data acquisition
-    while time.time() - start_time < test_time:  # Run for one hour
+    while time.time() - start_time < test_time:
         # Query the instrument for DC voltage measurement
         volts = float(dmm.volt())
 
@@ -72,13 +93,6 @@ try:
         # Pause for the sleep interval to control measurement frequency
         time.sleep(sleep_interval)
 
-    # Convert the data dictionary to a DataFrame
-    df = pd.DataFrame(data)
-
-    # Save the DataFrame to a CSV file
-    df.to_csv(csv_filename, index=False)
-    print(f"Data saved to {csv_filename}")
-
 except visa.VisaIOError as e:
     print(f"VISA error: {e}")
 
@@ -86,6 +100,7 @@ except Exception as e:
     print(f"An error occurred: {e}")
 
 finally:
+    save_data()
     # Close the connection to the instrument, if open
     if 'dmm' in locals():
         dmm.close()
