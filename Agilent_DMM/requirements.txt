@@ -1,0 +1,4 @@
+qcodes
+PyYAML
+matplotlib
+panda

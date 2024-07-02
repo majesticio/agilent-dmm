@@ -1,0 +1,5 @@
+visa_addr: "USB0::0x0957::0x1A07::MY53206340::INSTR"
+measurement_frequency: 10
+test_time: 9800
+max_points: 100
+log_file: "dmm_test.log"
