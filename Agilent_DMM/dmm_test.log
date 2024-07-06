@@ -1,0 +1,100 @@
+2024-07-05 19:57:05,309 - INFO - [dmm(Keysight34461A)] Opening PyVISA Resource Manager with default backend.
+2024-07-05 19:57:05,868 - INFO - [dmm(Keysight34461A)] Opening PyVISA resource at address: USB0::0x0957::0x1A07::MY53206340::INSTR
+2024-07-05 19:57:06,243 - INFO - [dmm(Keysight34461A)] Connected to instrument: {'vendor': 'Agilent Technologies', 'model': '34461A', 'serial': 'MY53206340', 'firmware': 'A.01.10-02.25-01.10-00.35-01-01'}
+2024-07-05 19:57:06,710 - INFO - Instrument setup successfully.
+2024-07-05 19:57:07,068 - ERROR - An error occurred during the test: 'DataFrame' object has no attribute 'append'
+2024-07-05 19:57:07,076 - INFO - Data saved to PDMS_Test_2024-07-05_19-57-07.csv
+2024-07-05 19:57:07,076 - INFO - Connection to DMM closed.
+2024-07-05 19:57:07,076 - INFO - Connection to DMM closed.
+2024-07-05 20:00:58,968 - INFO - [dmm(Keysight34461A)] Opening PyVISA Resource Manager with default backend.
+2024-07-05 20:00:58,996 - INFO - [dmm(Keysight34461A)] Opening PyVISA resource at address: USB0::0x0957::0x1A07::MY53206340::INSTR
+2024-07-05 20:00:59,168 - INFO - [dmm(Keysight34461A)] Connected to instrument: {'vendor': 'Agilent Technologies', 'model': '34461A', 'serial': 'MY53206340', 'firmware': 'A.01.10-02.25-01.10-00.35-01-01'}
+2024-07-05 20:00:59,401 - INFO - Instrument setup successfully.
+2024-07-05 20:00:59,514 - ERROR - An error occurred during the test: 'DataFrame' object has no attribute 'append'
+2024-07-05 20:00:59,515 - INFO - Data saved to PDMS_Test_2024-07-05_20-00-59.csv
+2024-07-05 20:00:59,515 - INFO - Connection to DMM closed.
+2024-07-05 20:00:59,516 - INFO - Connection to DMM closed.
+2024-07-05 20:01:08,462 - INFO - Closing all registered instruments
+2024-07-05 20:23:07,921 - INFO - [dmm(Keysight34461A)] Opening PyVISA Resource Manager with default backend.
+2024-07-05 20:23:07,961 - INFO - [dmm(Keysight34461A)] Opening PyVISA resource at address: USB0::0x0957::0x1A07::MY53206340::INSTR
+2024-07-05 20:23:08,123 - INFO - [dmm(Keysight34461A)] Connected to instrument: {'vendor': 'Agilent Technologies', 'model': '34461A', 'serial': 'MY53206340', 'firmware': 'A.01.10-02.25-01.10-00.35-01-01'}
+2024-07-05 20:23:08,356 - INFO - Instrument setup successfully.
+2024-07-05 20:23:08,592 - ERROR - An error occurred during the test: 'DataFrame' object has no attribute 'append'
+2024-07-05 20:23:08,594 - INFO - Data saved to PDMS_Test_2024-07-05_20-23-08.csv
+2024-07-05 20:23:08,594 - INFO - Connection to DMM closed.
+2024-07-05 20:24:36,586 - INFO - [dmm(Keysight34461A)] Opening PyVISA Resource Manager with default backend.
+2024-07-05 20:24:36,616 - INFO - [dmm(Keysight34461A)] Opening PyVISA resource at address: USB0::0x0957::0x1A07::MY53206340::INSTR
+2024-07-05 20:24:36,787 - INFO - [dmm(Keysight34461A)] Connected to instrument: {'vendor': 'Agilent Technologies', 'model': '34461A', 'serial': 'MY53206340', 'firmware': 'A.01.10-02.25-01.10-00.35-01-01'}
+2024-07-05 20:24:37,023 - INFO - Instrument setup successfully.
+2024-07-05 20:24:47,134 - INFO - Closing VISA handle to dmm as there are no non weak references to the instrument.
+2024-07-05 20:24:47,139 - INFO - Closing all registered instruments
+2024-07-05 20:24:47,139 - INFO - Closing dmm
+2024-07-05 20:29:43,058 - INFO - [dmm(Keysight34461A)] Opening PyVISA Resource Manager with default backend.
+2024-07-05 20:29:43,089 - INFO - [dmm(Keysight34461A)] Opening PyVISA resource at address: USB0::0x0957::0x1A07::MY53206340::INSTR
+2024-07-05 20:29:43,290 - INFO - [dmm(Keysight34461A)] Connected to instrument: {'vendor': 'Agilent Technologies', 'model': '34461A', 'serial': 'MY53206340', 'firmware': 'A.01.10-02.25-01.10-00.35-01-01'}
+2024-07-05 20:29:43,500 - INFO - Instrument setup successfully.
+2024-07-05 20:30:57,686 - INFO - Connection to DMM closed.
+2024-07-05 20:30:57,687 - INFO - Connection to DMM closed.
+2024-07-05 20:30:57,691 - INFO - Closing all registered instruments
+2024-07-05 20:50:33,061 - INFO - [dmm(Keysight34461A)] Opening PyVISA Resource Manager with default backend.
+2024-07-05 20:50:33,102 - INFO - [dmm(Keysight34461A)] Opening PyVISA resource at address: USB0::0x0957::0x1A07::MY53206340::INSTR
+2024-07-05 20:50:33,266 - INFO - [dmm(Keysight34461A)] Connected to instrument: {'vendor': 'Agilent Technologies', 'model': '34461A', 'serial': 'MY53206340', 'firmware': 'A.01.10-02.25-01.10-00.35-01-01'}
+2024-07-05 20:50:33,507 - INFO - Instrument setup successfully.
+2024-07-05 20:50:33,731 - ERROR - An error occurred during the test: 'DataFrame' object has no attribute 'append'
+2024-07-05 20:50:33,734 - INFO - Data saved to PDMS_Test_2024-07-05_20-50-33.csv
+2024-07-05 20:50:33,734 - INFO - Connection to DMM closed.
+2024-07-05 20:50:33,735 - INFO - Connection to DMM closed.
+2024-07-05 20:50:42,139 - INFO - Closing all registered instruments
+2024-07-05 20:54:26,618 - INFO - [dmm(Keysight34461A)] Opening PyVISA Resource Manager with default backend.
+2024-07-05 20:54:26,658 - INFO - [dmm(Keysight34461A)] Opening PyVISA resource at address: USB0::0x0957::0x1A07::MY53206340::INSTR
+2024-07-05 20:54:26,819 - INFO - [dmm(Keysight34461A)] Connected to instrument: {'vendor': 'Agilent Technologies', 'model': '34461A', 'serial': 'MY53206340', 'firmware': 'A.01.10-02.25-01.10-00.35-01-01'}
+2024-07-05 20:54:27,061 - INFO - Instrument setup successfully.
+2024-07-05 20:54:27,179 - ERROR - An error occurred during the test: 'DataFrame' object has no attribute 'append'
+2024-07-05 20:54:27,183 - INFO - Data saved to PDMS_Test_2024-07-05_20-54-27.csv
+2024-07-05 20:54:27,183 - INFO - Connection to DMM closed.
+2024-07-05 20:54:27,183 - INFO - Connection to DMM closed.
+2024-07-05 20:54:34,689 - INFO - Closing all registered instruments
+2024-07-05 20:56:09,850 - INFO - [dmm(Keysight34461A)] Opening PyVISA Resource Manager with default backend.
+2024-07-05 20:56:09,890 - INFO - [dmm(Keysight34461A)] Opening PyVISA resource at address: USB0::0x0957::0x1A07::MY53206340::INSTR
+2024-07-05 20:56:10,053 - INFO - [dmm(Keysight34461A)] Connected to instrument: {'vendor': 'Agilent Technologies', 'model': '34461A', 'serial': 'MY53206340', 'firmware': 'A.01.10-02.25-01.10-00.35-01-01'}
+2024-07-05 20:56:10,291 - INFO - Instrument setup successfully.
+2024-07-05 20:56:10,581 - ERROR - An error occurred during the test: 'DataFrame' object has no attribute 'append'
+2024-07-05 20:56:10,581 - INFO - Data saved to PDMS_Test_2024-07-05_20-56-10.csv
+2024-07-05 20:56:10,581 - INFO - Connection to DMM closed.
+2024-07-05 20:56:23,213 - INFO - Connection to DMM closed.
+2024-07-05 20:56:25,432 - INFO - Closing all registered instruments
+2024-07-05 20:59:08,843 - INFO - [dmm(Keysight34461A)] Opening PyVISA Resource Manager with default backend.
+2024-07-05 20:59:08,886 - INFO - [dmm(Keysight34461A)] Opening PyVISA resource at address: USB0::0x0957::0x1A07::MY53206340::INSTR
+2024-07-05 20:59:09,067 - INFO - [dmm(Keysight34461A)] Connected to instrument: {'vendor': 'Agilent Technologies', 'model': '34461A', 'serial': 'MY53206340', 'firmware': 'A.01.10-02.25-01.10-00.35-01-01'}
+2024-07-05 20:59:09,287 - INFO - Instrument setup successfully.
+2024-07-05 20:59:09,513 - ERROR - An error occurred during the test: 'DataFrame' object has no attribute 'append'
+2024-07-05 20:59:09,515 - INFO - Data saved to PDMS_Test_2024-07-05_20-59-09.csv
+2024-07-05 20:59:09,515 - INFO - Connection to DMM closed.
+2024-07-05 20:59:16,546 - INFO - Connection to DMM closed.
+2024-07-05 20:59:22,935 - INFO - Closing all registered instruments
+2024-07-05 21:01:24,568 - INFO - [dmm(Keysight34461A)] Opening PyVISA Resource Manager with default backend.
+2024-07-05 21:01:24,592 - INFO - [dmm(Keysight34461A)] Opening PyVISA resource at address: USB0::0x0957::0x1A07::MY53206340::INSTR
+2024-07-05 21:01:24,763 - INFO - [dmm(Keysight34461A)] Connected to instrument: {'vendor': 'Agilent Technologies', 'model': '34461A', 'serial': 'MY53206340', 'firmware': 'A.01.10-02.25-01.10-00.35-01-01'}
+2024-07-05 21:01:25,003 - INFO - Instrument setup successfully.
+2024-07-05 21:01:25,293 - ERROR - An error occurred during the test: 'DataFrame' object has no attribute 'append'
+2024-07-05 21:01:25,293 - INFO - Data saved to PDMS_Test_2024-07-05_21-01-25.csv
+2024-07-05 21:01:25,293 - INFO - Connection to DMM closed.
+2024-07-05 21:01:41,043 - INFO - Connection to DMM closed.
+2024-07-05 21:01:41,046 - INFO - Closing all registered instruments
+2024-07-05 21:03:20,775 - INFO - [dmm(Keysight34461A)] Opening PyVISA Resource Manager with default backend.
+2024-07-05 21:03:20,815 - INFO - [dmm(Keysight34461A)] Opening PyVISA resource at address: USB0::0x0957::0x1A07::MY53206340::INSTR
+2024-07-05 21:03:21,005 - INFO - [dmm(Keysight34461A)] Connected to instrument: {'vendor': 'Agilent Technologies', 'model': '34461A', 'serial': 'MY53206340', 'firmware': 'A.01.10-02.25-01.10-00.35-01-01'}
+2024-07-05 21:03:21,215 - INFO - Instrument setup successfully.
+2024-07-05 21:03:31,490 - INFO - Data saved to PDMS_Test_2024-07-05_21-03-21.csv
+2024-07-05 21:03:53,930 - INFO - Connection to DMM closed.
+2024-07-05 21:03:53,934 - INFO - Closing all registered instruments
+2024-07-05 21:05:24,993 - INFO - [dmm(Keysight34461A)] Opening PyVISA Resource Manager with default backend.
+2024-07-05 21:05:25,033 - INFO - [dmm(Keysight34461A)] Opening PyVISA resource at address: USB0::0x0957::0x1A07::MY53206340::INSTR
+2024-07-05 21:05:25,223 - INFO - [dmm(Keysight34461A)] Connected to instrument: {'vendor': 'Agilent Technologies', 'model': '34461A', 'serial': 'MY53206340', 'firmware': 'A.01.10-02.25-01.10-00.35-01-01'}
+2024-07-05 21:05:25,437 - INFO - Instrument setup successfully.
+2024-07-05 21:05:38,239 - INFO - Process interrupted, saving data and closing connections...
+2024-07-05 21:05:38,239 - INFO - Data saved to PDMS_Test_2024-07-05_21-05-25.csv
+2024-07-05 21:05:38,239 - INFO - Connection to DMM closed.
+2024-07-05 21:05:38,249 - INFO - Exiting gracefully.
+2024-07-05 21:05:38,249 - INFO - Connection to DMM closed.
+2024-07-05 21:05:38,252 - INFO - Closing all registered instruments
